@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"examples\/getRequest\/getRequest[1:7]","start":1713940270617,"end":1713940271032,"title":"examples\/getRequest\/getRequest[1:7] 12:01:10.617-12:01:11.032 get all the data from application in JSON"},{"id":2,"group":1,"content":"examples\/getRequest\/getRequest[3:19]","start":1713940271044,"end":1713940271122,"title":"examples\/getRequest\/getRequest[3:19] 12:01:11.044-12:01:11.122 get all the data from application in XML format using path variable"},{"id":3,"group":1,"content":"examples\/getRequest\/responseMatcher[1:7]","start":1713940271757,"end":1713940271819,"title":"examples\/getRequest\/responseMatcher[1:7] 12:01:11.757-12:01:11.819 get all the data from application in JSON","className":"failed"},{"id":4,"group":1,"content":"examples\/getRequest\/responseMatcher[2:38]","start":1713940271860,"end":1713940271889,"title":"examples\/getRequest\/responseMatcher[2:38] 12:01:11.860-12:01:11.889 get all the data from application in XML format"},{"id":5,"group":1,"content":"examples\/getRequest\/responseMatcher[3:45]","start":1713940271899,"end":1713940271910,"title":"examples\/getRequest\/responseMatcher[3:45] 12:01:11.899-12:01:11.910 get all the data from application in JSON and validate using negate condition"},{"id":6,"group":1,"content":"examples\/getRequest\/responseMatcher[4:75]","start":1713940271921,"end":1713940271932,"title":"examples\/getRequest\/responseMatcher[4:75] 12:01:11.921-12:01:11.932 get all the data from application in JSON and validate using specific property"},{"id":7,"group":1,"content":"examples\/getRequest\/responseMatcher[5:83]","start":1713940271945,"end":1713940271953,"title":"examples\/getRequest\/responseMatcher[5:83] 12:01:11.945-12:01:11.953 get all the data from application in JSON and validate using specific property project"},{"id":8,"group":1,"content":"examples\/getRequest\/validateJSONArray[1:7]","start":1713940272219,"end":1713940272240,"title":"examples\/getRequest\/validateJSONArray[1:7] 12:01:12.219-12:01:12.240 fuzzy matcher get all the data from application in JSON"},{"id":9,"group":1,"content":"examples\/getRequest\/validateJSONArray[2:24]","start":1713940272247,"end":1713940272266,"title":"examples\/getRequest\/validateJSONArray[2:24] 12:01:12.247-12:01:12.266 get all the data from application in JSON"},{"id":10,"group":1,"content":"examples\/getRequest\/validateXMLResponse[1:7]","start":1713940272375,"end":1713940272427,"title":"examples\/getRequest\/validateXMLResponse[1:7] 12:01:12.375-12:01:12.427 get all the data from application in JSON","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
